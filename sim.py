@@ -235,6 +235,7 @@ def main():
         altitude = []
         Vx0 = arg.starting_velocity
         Vy0 = arg.starting_velocity
+        # Calculate air density based off of https://www.grc.nasa.gov/WWW/K-12/rocket/atmos.html START
         for h in range(1, 35000):
             T = 59 - .00356 * h
             p = 2116 * math.pow(((T + 459.7) / 518.6), 5.256)
@@ -244,6 +245,7 @@ def main():
             print(alpha / m * 100)
             beta.append(alpha / m * 100)
             altitude.append(h)
+        # Calculate air density END
         ALL_beta.append(beta)
         ALL_altitude.append(altitude)
 
